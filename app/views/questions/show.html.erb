@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @question %>
+
+<% if @answer.present? %>
+  <h3> Answer </h3>
+  <%= @question.answer.description %>
+  <br>
+  <%= link_to "Edit this answer", edit_answer_path(@question.answer) %> |
+<% end %>
+
+<div>
+  <%= link_to "Edit this question", edit_question_path(@question) %> |
+  <%= link_to "Back to questions", questions_path %>
+  <%= link_to "Destroy this question", @question, method: :delete %>
+</div>

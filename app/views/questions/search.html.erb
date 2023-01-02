@@ -1,0 +1,8 @@
+<h3> Search Results of Questions </h3>
+<h3> Question Type: <%= @results.first.qns_type %> </h3>
+<% @results.each do |result| %>
+  <%= result.qns_description %><br>
+  <%= link_to "Show Question", question_path(result.id) %>
+  <br>
+  <br>
+<% end %>

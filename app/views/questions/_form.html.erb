@@ -1,0 +1,40 @@
+<%= form_with(model: question) do |form| %>
+  <% if question.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% question.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :qns_type, style: "display: block" %>
+    <%= form.text_field :qns_type %>
+  </div>
+    <%= form.collection_select :search, Question.order(:qns_type),:id,:qns_type, include_blank: true %>
+
+
+  <div>
+    <%= form.label :qns_description, style: "display: block" %>
+    <%= form.rich_text_area :qns_description %>
+  </div>
+
+
+  <% if action_name == 'new' %>
+    <div class='mt-5'>
+      <h3> Add Answer </h3>
+      <p>
+        <%= label_tag :ans_description %><br>
+        <%= rich_text_area_tag :ans_description %>
+      </p>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
