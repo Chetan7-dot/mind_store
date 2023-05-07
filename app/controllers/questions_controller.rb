@@ -3,11 +3,12 @@ class QuestionsController < ApplicationController
 
   # GET /questions or /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.includes(:answer)
   end
 
   # GET /questions/1 or /questions/1.json
   def show
+    @answer = @question.answer
   end
 
   # GET /questions/new
@@ -61,7 +62,10 @@ class QuestionsController < ApplicationController
   def search
     term = params[:search]
     @results = Question.where("lower(qns_type) LIKE ?", "%#{term.downcase}%")
+  end
 
+  def view
+    @questions = Question.where(qns_type: params[:type]).includes(:answer)
   end
 
   private

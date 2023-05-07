@@ -4,9 +4,9 @@
 
 <% if @answer.present? %>
   <h3> Answer </h3>
-  <%= @question.answer.description %>
+  <%= @answer.description %>
   <br>
-  <%= link_to "Edit this answer", edit_answer_path(@question.answer) %> |
+  <%#= link_to "Edit this answer", edit_answer_path(@question.answer) %> |
 <% end %>
 
 <div>

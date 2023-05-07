@@ -9,12 +9,12 @@
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
   </head>
 
   <body class='h-screen bg-blue-50'>
     <%= render "shared/nav" %>
-
     <%= yield %>
   </body>
 </html>

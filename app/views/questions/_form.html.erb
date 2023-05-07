@@ -15,8 +15,7 @@
     <%= form.label :qns_type, style: "display: block" %>
     <%= form.text_field :qns_type %>
   </div>
-    <%= form.collection_select :search, Question.order(:qns_type),:id,:qns_type, include_blank: true %>
-
+    <%#= form.collection_select :search, Question.order(:qns_type),:id,:qns_type, include_blank: true %>
 
   <div>
     <%= form.label :qns_description, style: "display: block" %>
