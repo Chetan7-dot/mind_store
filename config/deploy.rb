@@ -2,7 +2,9 @@
 lock "~> 3.18.0"
 
 set :application, "mind_store"
-set :repo_url, "git@github.com:[your-github-username]/[your-github-reponame].git"
+set :repo_url, "git@github.com:Chetan7-dot/mind_store.git"
+
+set :deploy_to, '/home/ubuntu/mind_store'
 append :linked_files, "config/database.yml", 'config/master.key'
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "storage"
 set :rbenv_ruby, '3.1.2'

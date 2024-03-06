@@ -28,7 +28,7 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
-
+/my_mind.pem
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
@@ -38,3 +38,5 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+/vendor/bundle/*
